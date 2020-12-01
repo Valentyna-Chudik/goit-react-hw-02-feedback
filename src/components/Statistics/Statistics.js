@@ -15,21 +15,10 @@ export default class Statistics extends Component {
     bad: this.props.initialValue,
   };
 
-  handleIncrementGood = () => {
+  addFeedback = e => {
+    const buttonName = e.target.name;
     this.setState(prevState => ({
-      good: prevState.good + 1,
-    }));
-  };
-
-  handleIncrementNeutral = () => {
-    this.setState(prevState => ({
-      neutral: prevState.neutral + 1,
-    }));
-  };
-
-  handleIncrementBad = () => {
-    this.setState(prevState => ({
-      bad: prevState.bad + 1,
+      [buttonName]: prevState[buttonName] + 1,
     }));
   };
 
@@ -47,13 +36,13 @@ export default class Statistics extends Component {
       <div>
         <p>Please leave feedback</p>
         <div>
-          <button type="button" onClick={this.handleIncrementGood}>
+          <button type="button" name="good" onClick={this.addFeedback}>
             Good
           </button>
-          <button type="button" onClick={this.handleIncrementNeutral}>
+          <button type="button" name="neutral" onClick={this.addFeedback}>
             Neutral
           </button>
-          <button type="button" onClick={this.handleIncrementBad}>
+          <button type="button" name="bad" onClick={this.addFeedback}>
             Bad
           </button>
         </div>
