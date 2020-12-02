@@ -1,9 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
+// import styles from './Notification.module.css';
 
 export default function Notification({ message }) {
   return (
-    <section>
-      <h3>{message}</h3>
-    </section>
+    <div>
+      <p>{message}</p>
+    </div>
   );
 }
+
+Notification.propTypes = {
+  message: PropTypes.string.isRequired,
+};
