@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// import styles from './Statistics.module.css';
+import styles from './Statistics.module.css';
 
 export default function Statistics({
   good,
@@ -11,12 +11,14 @@ export default function Statistics({
   positivePercentage,
 }) {
   return (
-    <div>
-      <span>Good: {good}</span>
-      <span>Neutral: {neutral}</span>
-      <span>Bad: {bad}</span>
-      <span>Total: {total}</span>
-      <span>Positive feedback: {positivePercentage}%</span>
+    <div className={styles.container}>
+      <span className={styles.option}>Good: {good}</span>
+      <span className={styles.option}>Neutral: {neutral}</span>
+      <span className={styles.option}>Bad: {bad}</span>
+      <span className={styles.option}>Total: {total}</span>
+      <span className={styles.option}>
+        Positive feedback: {positivePercentage}%
+      </span>
     </div>
   );
 }

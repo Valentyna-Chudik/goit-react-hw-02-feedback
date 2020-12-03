@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// import styles from './Notification.module.css';
+import styles from './Notification.module.css';
 
 export default function Notification({ message }) {
   return (
     <div>
-      <p>{message}</p>
+      <p className={styles.notification}>{message}</p>
     </div>
   );
 }

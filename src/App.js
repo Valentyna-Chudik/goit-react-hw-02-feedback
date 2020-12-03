@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import Container from './components/Container/Container';
 import FeedbackOptions from './components/FeedbackOptions/FeedbackOptions';
 import Statistics from './components/Statistics/Statistics';
 import Section from './components/Section/Section';
@@ -45,25 +46,27 @@ export default class App extends Component {
 
     return (
       <div>
-        <Section title="Please leave feedback">
-          <FeedbackOptions
-            options={['good', 'neutral', 'bad']}
-            onLeaveFeedback={this.handleFeedback}
-          />
-        </Section>
-        {total > 0 ? (
-          <Section title="Statistics">
-            <Statistics
-              good={good}
-              bad={bad}
-              neutral={neutral}
-              total={total}
-              positivePercentage={positivePercentage}
+        <Container>
+          <Section title="Please leave feedback">
+            <FeedbackOptions
+              options={['good', 'neutral', 'bad']}
+              onLeaveFeedback={this.handleFeedback}
             />
           </Section>
-        ) : (
-          <Notification message="No feedback given" />
-        )}
+          {total > 0 ? (
+            <Section title="Statistics">
+              <Statistics
+                good={good}
+                bad={bad}
+                neutral={neutral}
+                total={total}
+                positivePercentage={positivePercentage}
+              />
+            </Section>
+          ) : (
+            <Notification message="No feedback given 😔" />
+          )}
+        </Container>
       </div>
     );
   }
