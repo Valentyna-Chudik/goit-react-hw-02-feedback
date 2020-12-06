@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
 
 import Container from './components/Container/Container';
-import FeedbackOptions from './components/FeedbackOptions/FeedbackOptions';
-import Statistics from './components/Statistics/Statistics';
 import Section from './components/Section/Section';
+import FeedbackOptions from './components/FeedbackOptions/FeedbackOptions';
 import Notification from './components/Notification/Notification';
+import Statistics from './components/Statistics/Statistics';
 
 export default class App extends Component {
   static defaultProps = {
     initialValue: 0,
   };
-
-  // static propTypes = {};
 
   state = {
     good: this.props.initialValue,
